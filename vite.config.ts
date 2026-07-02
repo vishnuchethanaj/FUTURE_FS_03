@@ -6,6 +6,8 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const renderHostname = process.env.RENDER_EXTERNAL_HOSTNAME || process.env.RENDER_INTERNAL_HOSTNAME || process.env.RENDER_SERVICE_ID || "future-fs-03-ok82.onrender.com";
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
@@ -15,6 +17,11 @@ export default defineConfig({
   preview: {
     host: "0.0.0.0",
     port: Number(process.env.PORT || 4173),
-    allowedHosts: "auto",
+    allowedHosts: [
+      renderHostname,
+      ".onrender.com",
+      "localhost",
+      "127.0.0.1",
+    ],
   },
 });

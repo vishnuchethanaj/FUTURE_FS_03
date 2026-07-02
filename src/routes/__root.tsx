@@ -77,19 +77,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Elevate Fitness Club — Train Smarter. Live Stronger." },
+      {
+        name: "description",
+        content:
+          "Elevate Fitness Club is a premium fitness experience: expert coaching, strength training, AI-powered plans, nutrition guidance, recovery and transformation programs.",
+      },
+      { name: "author", content: "Elevate Fitness Club" },
+      { property: "og:title", content: "Elevate Fitness Club — Train Smarter. Live Stronger." },
+      {
+        property: "og:description",
+        content:
+          "A world-class luxury gym experience with premium coaching, AI fitness planning and transformation programs.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
